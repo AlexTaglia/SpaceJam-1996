@@ -1,0 +1,49 @@
+.container{
+    width: 500px;
+}
+
+.row{
+    height: 140px;
+}
+
+body{
+    background-image: url(../img/bg_stars.gif);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.center{
+    margin-top: 140px;
+}
+
+
+.lineup,
+.junior{
+    margin-left: -35px;
+}
+
+.jump{
+    position: relative;
+}
+
+.jumplogo{
+    position: absolute;
+    transform: translate(-60%);
+}
+
+li{
+    padding: 0 10px;
+}
+
+a,
+.footer{
+    color: red;
+    font-size: 13px;
+}
+
+a:hover{
+    color: red;
+}
+
+footer{
+    margin-top: 140px;
+}
