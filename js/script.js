@@ -55,72 +55,78 @@ var myQuestions = [
     }
 ];
 
-
-const quizContainer2 = document.getElementById('quiz2');
-const resultsContainer2 = document.getElementById('results2');
-const next = document.getElementById('next');
-const prev = document.getElementById('prev');
-
-const submitButton2 = document.getElementById('submit2');
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const nextButton = document.getElementById('next');
+const prevButoton = document.getElementById('prev');
+const submitButton = document.getElementById('submit');
 const answerContainers = document.getElementsByClassName('answer');
 
-
+// Setto un contatire che incrementerò o decrementero per mostrare la domanda
 let counter = 0
 
-function mostraDomanda() {
+// Funzione per mostrare una domanda
+function showQuestion() {
     
-    quizContainer2.innerHTML = `${myQuestions[counter].question} <br>`
+    // aggiungo al quizContainer la domanda
+    quizContainer.innerHTML = `${myQuestions[counter].question} <br>`
     
+    // aggiungo gli input radio per ogni scelta nelle risposte
     for (letter in myQuestions[counter].answers) {
-        quizContainer2.innerHTML +=
+        quizContainer.innerHTML +=
         `
         <div class="answer">
-        <label>
-        <input onclick="mostraRisultato()" type="radio" name="question${[counter]}" value="${letter}">
-        ${letter}: 
-        ${myQuestions[counter].answers[letter]}
-        </label>  
+            <label>
+            <input type="radio" name="question${[counter]}" value="${letter}">
+             ${letter}: 
+             ${myQuestions[counter].answers[letter]}
+            </label>  
         </div>  
         `
     }
     
 };
 
-function nextquestion() {
+// domada successiva
+function nextQuestion() {
     if(counter === myQuestions.length-1){
-        counter = 0
+        // counter = 0
     }
     else {
         counter++
     }
-    mostraDomanda()
+    showQuestion()
 }
 
-function prevquestion() {
+// domada precedente
+function prevQuestion() {
     if(counter === 0 ){
-        counter = myQuestions.length-1
+        // counter = myQuestions.length-1
     }
     else {
         counter--
     }
-    mostraDomanda()
+    showQuestion()
 }
 
-function mostraRisultato() {
+// in progress
+function showResult() {
     var userAnswer = '';
     for (var i = 0; i < answerContainers.length; i++) {
         
         // prendo la letterea corispondente alla risposta
         userAnswer = (answerContainers[i].querySelector(`input[name=question${[counter]}]:checked`) || {}).value;
 
+        // se la lettera userAnswer corrisponde alla domanda corrette nell'array allora la risposta diventa verde
         if (userAnswer === myQuestions[counter].correctAnswer) {
             answerContainers[i].style.color = 'lightgreen';
         }
         
+        // altrimenti tutte le altre diventano rosse
         else {
-            // answerContainers[i].style.color = 'red';
+            answerContainers[i].style.color = 'red';
         }
     }
 }
 
-mostraDomanda()
+showQuestion()
