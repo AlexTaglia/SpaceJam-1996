@@ -124,7 +124,8 @@ function showResult() {
         
         // altrimenti la risposta selezionata diventa rossa
         else if(answerContainers[i].querySelector(`input[name=question${[counter]}]:checked`)) {
-            answerContainers[i].style.color = 'red';
+            answerContainers[i].style.color = 'darkred';
+            alert('Try again!')
         }
     }
 }

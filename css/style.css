@@ -6,17 +6,24 @@
     height: 140px;
 }
 
-body{
+body.index,
+body.lineup{
     background-image: url(../img/bg_stars.gif);
     font-family: 'Times New Roman', Times, serif;
 }
+
+body.trivia{
+    background-image: url(../img/bg-lineup.gif);
+    font-family: 'Times New Roman', Times, serif;
+}
+
 
 .center{
     margin-top: 140px;
 }
 
 
-.lineup,
+.lineup-planet,
 .junior{
     margin-left: -35px;
 }
@@ -32,6 +39,7 @@ body{
 
 li{
     padding: 0 10px;
+    list-style: none;
 }
 
 a,
@@ -46,4 +54,27 @@ a:hover{
 
 footer{
     margin-top: 140px;
+}
+
+.text-yellow{
+    color: yellow;
+}
+
+.lineup .text p{
+    color: red;
+    font-size: 23px;
+}
+
+.lineup,
+.trivia {
+    padding: 20px 60px 0 60px;
+}
+
+.lineup .logo,
+.trivia .logo {
+    width: 100px;
+}
+
+.trivia{
+    font-size: 23px;
 }

@@ -5,23 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 
     <title>lineup</title>
 </head>
 
-<body>
+<body class="lineup">
+    <div class="container-fluid text-center">
+        <header class="row">
+            <div class="col-2">
+                <a href="../index.html">
+                    <img class="logo" src="../img/p-jamlogo.gif " alt="logo">
+                </a> 
+            </div>
+        </header>
 
-    <div class="quiz-container text-white">
-        <div id="quiz"></div>
-        <button onclick="prevQuestion()" id="prev">prev Q</button>
-        <button onclick="nextQuestion()" id="next">next Q</button>
-        <button onclick="showResult()" id="submit">Get Results</button>
-        <div id="results"></div>
+        <img src="../img/m-lineup.jpg" alt="">
+        <div class="row">
+            <div class="col-10 text">
+                <p>The cast, the characters, the players, the 'Tunes! When did Michael Jordan get into acting? Who are
+                    the Monstars, and how could they possibly make the Tazmanian Devil faint? How long has Bugs been
+                    driving Daffy crazy? Read on, and test your knowledge with our Trivia Quiz by hitting the Games
+                    button.</p>
+            </div>
+            <div class="col-2">
+                <a href="../pages/quiz.html">
+                    <img class="img-fluid" src="../img/n-games.gif" alt="games">
+                </a>
+            </div>
+        </div>
+        <footer class=" footer text-center">
+            <p class="text-yellow">
+                SPACE JAM, characters, names, and all related <br>
+                indicia are trademarks of Warner Bros. © 1996
+            </p>
+        </footer>
     </div>
-
-    <script src="../js/script.js"></script>
 </body>
 
 </html>
