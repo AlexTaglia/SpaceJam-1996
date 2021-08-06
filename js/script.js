@@ -109,21 +109,21 @@ function prevQuestion() {
     showQuestion()
 }
 
-// in progress
 function showResult() {
-    var userAnswer = '';
+    let userAnswer = '';
     for (var i = 0; i < answerContainers.length; i++) {
         
         // prendo la letterea corispondente alla risposta
         userAnswer = (answerContainers[i].querySelector(`input[name=question${[counter]}]:checked`) || {}).value;
+        console.log(userAnswer);
 
         // se la lettera userAnswer corrisponde alla domanda corrette nell'array allora la risposta diventa verde
         if (userAnswer === myQuestions[counter].correctAnswer) {
             answerContainers[i].style.color = 'lightgreen';
         }
         
-        // altrimenti tutte le altre diventano rosse
-        else {
+        // altrimenti la risposta selezionata diventa rossa
+        else if(answerContainers[i].querySelector(`input[name=question${[counter]}]:checked`)) {
             answerContainers[i].style.color = 'red';
         }
     }
